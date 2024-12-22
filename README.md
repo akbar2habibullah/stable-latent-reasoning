@@ -1,4 +1,4 @@
-# Stable Latent Reasoning
+# Stable Latent Reasoning: LLM Inference Scaling
 
 > **Enhancing Inference in Large Language Models through Iterative Latent Space Refinement**
 
