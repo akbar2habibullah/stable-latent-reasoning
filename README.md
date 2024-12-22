@@ -2,6 +2,35 @@
 
 > **Enhancing Inference in Large Language Models through Iterative Latent Space Refinement**
 
+```mermaid
+    graph LR
+        subgraph Initialization
+            A[Start] --> B(Tokenize Input Query);
+            B --> C(Encode Input Embeddings);
+            C --> D("Get Initial Hidden State (h_0)");
+            D --> E(Set Iteration t = 0);
+            E --> F(Initialize Output y = "");
+        end
+
+        subgraph IterativeRefinement
+            F --> G{"Check Loop Condition: t < T AND condition(h_t) < threshold"};
+            G -- Yes --> H(Increment t);
+            H --> I("Compute Timestep Embedding (e_t)");
+            I --> J("Apply Loop-wise LoRA (Optional)");
+            J --> K("Update Hidden State (h_t') using f_θ with h_{t-1} and e_t");
+            K --> L("Apply Loop Residual Connection (Optional)");
+            L --> M(Update h_t);
+            M --> G;
+            G -- No --> N[End Iteration];
+        end
+
+        subgraph Decoding
+            N --> O("Generate Output Sequence (y) using decode(h_t)");
+        end
+
+        O --> P[Return y];
+```
+
 **1. Introduction**
 
 Large Language Models (LLMs) have demonstrated remarkable capabilities in various natural language processing tasks. However, their reasoning abilities, particularly on complex problems requiring multi-step inference, remain limited. This limitation often stems from the inherent sequential nature of text generation, where each token is predicted based on the preceding context. While techniques like Chain-of-Thought (CoT) prompting have shown improvements, they are constrained by the discrete and often inefficient nature of language for representing complex reasoning processes.
