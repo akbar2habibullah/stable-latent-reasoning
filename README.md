@@ -108,7 +108,7 @@ Stable Latent Reasoning offers a promising new approach to enhance the reasoning
 **9. Relation to Cited Papers**
 
 Our idea builds upon and extends the concepts presented in the cited papers:
-- Relaxed Recursive Transformer: We borrow the idea of loop-specific parameter adjustments (LoRA) to add flexibility to each iteration.
-- Diffusion Models: We adopt the concept of timestep embeddings to guide the iterative refinement process.
-- ResNets: We incorporate residual connections to stabilize the loop and prevent error accumulation.
-- COCONUT: This is the most closely related, and we build upon it by adding the stabilization techniques. Our method offers a more general and potentially more powerful approach to latent reasoning.
+- [Relaxed Recursive Transformer](https://arxiv.org/abs/2410.20672): We borrow the idea of loop-specific parameter adjustments (LoRA) to add flexibility to each iteration.
+- [Diffusion Models](https://arxiv.org/abs/2112.10752): We adopt the concept of timestep embeddings to guide the iterative refinement process.
+- [ResNets](https://arxiv.org/abs/1512.03385): We incorporate residual connections to stabilize the loop and prevent error accumulation.
+- [COCONUT](https://arxiv.org/abs/2412.06769v1): This is the most closely related, and we build upon it by adding the stabilization techniques. Our method offers a more general and potentially more powerful approach to latent reasoning.
